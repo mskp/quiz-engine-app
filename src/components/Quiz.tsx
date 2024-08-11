@@ -76,7 +76,7 @@ const Quiz = () => {
     toast({
       title: "No questions found",
       description:
-        "Either you haven't selected any tags or the tags you have selected don't correspond to any questions",
+        "Either you haven’t selected any tags, or the tags you have selected don’t match any available questions.",
     });
     return <Navigate to="/" />;
   }
