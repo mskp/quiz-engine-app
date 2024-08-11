@@ -48,11 +48,18 @@ const TagSelection = () => {
       return { ...question, matchCount };
     });
 
-    const sortedQuestions = scoredQuestions.sort(
+    const filteredQuestions = scoredQuestions.filter(
+      (question) => question.matchCount > 0
+    );
+
+    const sortedQuestions = filteredQuestions.sort(
       (a, b) => b.matchCount - a.matchCount
     );
 
-    const topQuestions = sortedQuestions.slice(0, 10);
+    const topQuestions = sortedQuestions.slice(
+      0,
+      Math.min(10, sortedQuestions.length)
+    );
 
     return topQuestions;
   };
