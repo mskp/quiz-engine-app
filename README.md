@@ -2,9 +2,10 @@
 
 A dynamic quiz engine that allows users to select tags, generates the top 10 most relevant questions based on the selected tags, and displays the user's score after the quiz. Built with a modern tech stack, this application provides a responsive and user-friendly experience.
 
-## Explainer Docs
+## Links
 
-https://docs.google.com/document/d/1xW3ShMRlVGufSrW-35LdcSK08v3buVS-3MANf4dWBcg/
+- Explainer Docs: https://docs.google.com/document/d/1xW3ShMRlVGufSrW-35LdcSK08v3buVS-3MANf4dWBcg/
+- Deployment Link: https://quizengine.sushant.fun/
 
 ## 🛠 Tech Stack
 
