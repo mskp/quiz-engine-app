@@ -1,4 +1,5 @@
 import data from "@/data/data.json";
+import type { Question } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { setMatchedQuestions } from "@/services/redux/slices/questionsSlice";
 import { setTags } from "@/services/redux/slices/tagsSlice";
@@ -9,15 +10,7 @@ import { Button } from "./ui/button";
 import { Toggle } from "./ui/toggle";
 import { toast } from "./ui/use-toast";
 
-interface Question {
-  question: string;
-  options: string[];
-  correct: string[];
-  type: "single" | "multiple";
-  tags: string[];
-}
-
-const TagSelection = () => {
+const TagSelector = () => {
   const [selectedTags, setSelectedTagsState] = useState<string[]>([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -105,4 +98,4 @@ const TagSelection = () => {
   );
 };
 
-export default TagSelection;
+export default TagSelector;

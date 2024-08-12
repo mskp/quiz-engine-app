@@ -1,13 +1,7 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import data from "@/data/data.json";
-
-interface Question {
-  question: string;
-  options: string[];
-  correct: string[];
-  type: "single" | "multiple";
-  tags: string[];
-}
+import { Question } from "@/lib/types";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 interface QuestionsState {
   allQuestions: Question[];
@@ -34,6 +28,11 @@ const questionsSlice = createSlice({
   },
 });
 
+export const selectMatchedQuestions = (state: RootState) =>
+  state.questions.matchedQuestions;
+
 export const { setMatchedQuestions, setUserAnswers } = questionsSlice.actions;
 
-export default questionsSlice.reducer;
+const questionsReducer = questionsSlice.reducer;
+
+export default questionsReducer;

@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import tagsReducer from "./slices/tagsSlice";
 import questionsReducer from "./slices/questionsSlice";
 import scoreReducer from "./slices/scoreSlice";
+import tagsReducer from "./slices/tagsSlice";
 
 const store = configureStore({
   reducer: {

@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 interface ScoreState {
   score: number;
@@ -18,6 +19,10 @@ const scoreSlice = createSlice({
   },
 });
 
+export const selectScore = (state: RootState) => state.score.score;
+
 export const { setScore } = scoreSlice.actions;
 
-export default scoreSlice.reducer;
+const scoreReducer = scoreSlice.reducer;
+
+export default scoreReducer;

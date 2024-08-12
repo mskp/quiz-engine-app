@@ -1,7 +1,10 @@
 import { calculateScore } from "@/lib/utils";
-import { setUserAnswers } from "@/services/redux/slices/questionsSlice";
+import {
+  selectMatchedQuestions,
+  setUserAnswers,
+} from "@/services/redux/slices/questionsSlice";
 import { setScore } from "@/services/redux/slices/scoreSlice";
-import { AppDispatch, RootState } from "@/services/redux/store";
+import { AppDispatch } from "@/services/redux/store";
 import { Navigate, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,9 +14,7 @@ import { toast } from "./ui/use-toast";
 const Quiz = () => {
   const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();
-  const { matchedQuestions } = useSelector(
-    (state: RootState) => state.questions
-  );
+  const matchedQuestions = useSelector(selectMatchedQuestions);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [allAnswers, setAllAnswers] = useState<(string[] | string)[]>([]);
 
