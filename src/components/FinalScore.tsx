@@ -1,14 +1,12 @@
 import { selectScore } from "@/services/redux/slices/scoreSlice";
-import { RootState } from "@/services/redux/store";
+import { selectSelectedTags } from "@/services/redux/slices/tagsSlice";
 import { Navigate } from "@tanstack/react-router";
 import { useSelector } from "react-redux";
 import { toast } from "./ui/use-toast";
 
 const FinalScore = () => {
   const score = useSelector(selectScore);
-  const selectedTags = useSelector(
-    (state: RootState) => state.tags.selectedTags
-  );
+  const selectedTags = useSelector(selectSelectedTags);
 
   if (!selectedTags.length) {
     toast({

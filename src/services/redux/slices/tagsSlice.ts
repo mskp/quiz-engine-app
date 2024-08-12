@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 const tagsSlice = createSlice({
   name: "tags",
@@ -11,6 +12,8 @@ const tagsSlice = createSlice({
     },
   },
 });
+
+export const selectSelectedTags = (state: RootState) => state.tags.selectedTags;
 
 export const { setTags } = tagsSlice.actions;
 
